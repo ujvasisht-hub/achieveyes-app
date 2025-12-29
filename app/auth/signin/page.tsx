@@ -59,19 +59,21 @@ export default function SignInPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-black">
-      <div className="bg-gray-900 border-2 border-red-500/50 p-8 rounded-2xl shadow-2xl w-full max-w-md">
-        <h1 className="text-4xl font-bebas text-center mb-4">
-          <span className="bg-gradient-to-r from-red-500 via-orange-500 to-red-600 bg-clip-text text-transparent">
-            ACHIEVE
-          </span>
-          <span className="text-white">YES</span>
-        </h1>
-        <p className="text-center text-gray-300 mb-6 font-bold">
-          {isSignUp
-            ? "Start your journey to achieve your goals"
-            : "Sign in to track your goals"}
-        </p>
+    <div className="min-h-screen flex items-center justify-center bg-black px-4">
+      <div className="bg-gray-900 border-2 border-red-500/50 p-8 md:p-12 rounded-2xl shadow-2xl w-full max-w-md">
+        <div className="text-center mb-8">
+          <h1 className="text-6xl md:text-7xl font-bebas tracking-tight mb-2">
+            <span className="bg-gradient-to-r from-red-500 via-orange-500 to-red-600 bg-clip-text text-transparent">
+              ACHIEVE
+            </span>
+            <span className="text-white">YES</span>
+          </h1>
+          <p className="text-xl md:text-2xl text-gray-300 font-bold mt-4">
+            {isSignUp
+              ? "Start your journey to achieve your goals"
+              : "Sign in to track your goals"}
+          </p>
+        </div>
 
         {error && (
           <div className="bg-red-950/50 border-2 border-red-500 text-red-300 px-4 py-3 rounded mb-4">
@@ -79,17 +81,18 @@ export default function SignInPage() {
           </div>
         )}
 
-        <form onSubmit={handleEmailSignIn} className="space-y-4">
+        <form onSubmit={handleEmailSignIn} className="space-y-6">
           {isSignUp && (
             <div>
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                Name
+              <label className="block text-sm font-bold text-gray-300 mb-2">
+                Name <span className="text-red-500">*</span>
               </label>
               <input
                 type="text"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="w-full px-4 py-3 bg-black border-2 border-gray-700 rounded-lg text-white focus:border-red-500 focus:outline-none transition-colors"
+                className="w-full px-4 py-3 bg-black border-2 border-gray-700 rounded-lg text-white placeholder-gray-500 focus:border-red-500 focus:outline-none transition-colors"
+                placeholder="Your full name"
                 required
               />
             </div>
@@ -97,26 +100,28 @@ export default function SignInPage() {
 
           <div>
             <label className="block text-sm font-bold text-gray-300 mb-2">
-              Email
+              Email <span className="text-red-500">*</span>
             </label>
             <input
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full px-4 py-3 bg-black border-2 border-gray-700 rounded-lg text-white focus:border-red-500 focus:outline-none transition-colors"
+              className="w-full px-4 py-3 bg-black border-2 border-gray-700 rounded-lg text-white placeholder-gray-500 focus:border-red-500 focus:outline-none transition-colors"
+              placeholder="your@email.com"
               required
             />
           </div>
 
           <div>
             <label className="block text-sm font-bold text-gray-300 mb-2">
-              Password
+              Password <span className="text-red-500">*</span>
             </label>
             <input
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-4 py-3 bg-black border-2 border-gray-700 rounded-lg text-white focus:border-red-500 focus:outline-none transition-colors"
+              className="w-full px-4 py-3 bg-black border-2 border-gray-700 rounded-lg text-white placeholder-gray-500 focus:border-red-500 focus:outline-none transition-colors"
+              placeholder="Enter your password"
               required
             />
           </div>
@@ -134,30 +139,32 @@ export default function SignInPage() {
           </button>
         </form>
 
-        <div className="mt-4">
+        <div className="mt-6">
           <div className="relative">
             <div className="absolute inset-0 flex items-center">
-              <div className="w-full border-t border-gray-300 dark:border-gray-600"></div>
+              <div className="w-full border-t border-gray-700"></div>
             </div>
             <div className="relative flex justify-center text-sm">
-              <span className="px-2 bg-white dark:bg-gray-800 text-gray-500">
+              <span className="px-4 bg-gray-900 text-gray-400 font-bold">
                 Or continue with
               </span>
             </div>
           </div>
 
           <button
+            type="button"
             onClick={handleGoogleSignIn}
             disabled={isLoading}
-            className="mt-4 w-full bg-black border-2 border-gray-700 text-gray-300 py-3 px-4 rounded-lg font-bold hover:border-red-500 transition-all"
+            className="mt-6 w-full bg-black border-2 border-gray-700 text-gray-300 py-3 px-4 rounded-lg font-bold hover:border-red-500 hover:text-white transition-all"
           >
             Google
           </button>
         </div>
 
-        <p className="mt-4 text-center text-sm text-gray-300">
+        <p className="mt-6 text-center text-sm text-gray-400">
           {isSignUp ? "Already have an account? " : "Don't have an account? "}
           <button
+            type="button"
             onClick={() => {
               setIsSignUp(!isSignUp);
               setError("");
