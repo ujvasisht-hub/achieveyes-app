@@ -59,14 +59,15 @@ export default function SignInPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-black px-4">
-      <div className="bg-gray-900 border-2 border-red-500/50 p-8 md:p-12 rounded-2xl shadow-2xl w-full max-w-md">
-        <div className="text-center mb-8">
-          <h1 className="text-6xl md:text-7xl font-bebas tracking-tight mb-2">
-            <span className="bg-gradient-to-r from-red-500 via-orange-500 to-red-600 bg-clip-text text-transparent">
+    <div className="min-h-screen bg-black text-white flex items-center justify-center px-4 py-12">
+      <div className="w-full max-w-md">
+        {/* Logo/Title Section */}
+        <div className="text-center mb-12">
+          <h1 className="text-6xl md:text-8xl font-bebas tracking-tight mb-4">
+            <span className="bg-gradient-to-r from-red-500 via-orange-500 to-red-600 bg-clip-text text-transparent block">
               ACHIEVE
             </span>
-            <span className="text-white">YES</span>
+            <span className="text-white block">YES</span>
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 font-bold mt-4">
             {isSignUp
@@ -75,105 +76,109 @@ export default function SignInPage() {
           </p>
         </div>
 
-        {error && (
-          <div className="bg-red-950/50 border-2 border-red-500 text-red-300 px-4 py-3 rounded mb-4">
-            {error}
-          </div>
-        )}
+        {/* Form Card */}
+        <div className="bg-gray-900 border-2 border-red-500/50 rounded-2xl p-8 md:p-10 shadow-2xl">
 
-        <form onSubmit={handleEmailSignIn} className="space-y-6">
-          {isSignUp && (
-            <div>
-              <label className="block text-sm font-bold text-gray-300 mb-2">
-                Name <span className="text-red-500">*</span>
-              </label>
-              <input
-                type="text"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                className="w-full px-4 py-3 bg-black border-2 border-gray-700 rounded-lg text-white placeholder-gray-500 focus:border-red-500 focus:outline-none transition-colors"
-                placeholder="Your full name"
-                required
-              />
+          {error && (
+            <div className="bg-red-950/50 border-2 border-red-500 text-red-300 px-4 py-3 rounded-lg mb-6 font-bold">
+              {error}
             </div>
           )}
 
-          <div>
-            <label className="block text-sm font-bold text-gray-300 mb-2">
-              Email <span className="text-red-500">*</span>
-            </label>
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="w-full px-4 py-3 bg-black border-2 border-gray-700 rounded-lg text-white placeholder-gray-500 focus:border-red-500 focus:outline-none transition-colors"
-              placeholder="your@email.com"
-              required
-            />
-          </div>
+          <form onSubmit={handleEmailSignIn} className="space-y-5">
+            {isSignUp && (
+              <div>
+                <label className="block text-sm font-bold text-gray-300 mb-2">
+                  Name <span className="text-red-500">*</span>
+                </label>
+                <input
+                  type="text"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  className="w-full px-4 py-3 bg-black border-2 border-gray-700 rounded-lg text-white placeholder-gray-500 focus:border-red-500 focus:outline-none transition-colors font-medium"
+                  placeholder="Your full name"
+                  required
+                />
+              </div>
+            )}
 
-          <div>
-            <label className="block text-sm font-bold text-gray-300 mb-2">
-              Password <span className="text-red-500">*</span>
-            </label>
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-4 py-3 bg-black border-2 border-gray-700 rounded-lg text-white placeholder-gray-500 focus:border-red-500 focus:outline-none transition-colors"
-              placeholder="Enter your password"
-              required
-            />
-          </div>
-
-          <button
-            type="submit"
-            disabled={isLoading}
-            className="w-full bg-gradient-to-r from-red-600 to-orange-600 text-white py-4 px-8 rounded-lg font-bold hover:from-red-700 hover:to-orange-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all transform hover:scale-105 animate-glow"
-          >
-            {isLoading
-              ? "LOADING..."
-              : isSignUp
-              ? "SIGN UP"
-              : "SIGN IN"}
-          </button>
-        </form>
-
-        <div className="mt-6">
-          <div className="relative">
-            <div className="absolute inset-0 flex items-center">
-              <div className="w-full border-t border-gray-700"></div>
+            <div>
+              <label className="block text-sm font-bold text-gray-300 mb-2">
+                Email <span className="text-red-500">*</span>
+              </label>
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="w-full px-4 py-3 bg-black border-2 border-gray-700 rounded-lg text-white placeholder-gray-500 focus:border-red-500 focus:outline-none transition-colors font-medium"
+                placeholder="your@email.com"
+                required
+              />
             </div>
-            <div className="relative flex justify-center text-sm">
-              <span className="px-4 bg-gray-900 text-gray-400 font-bold">
-                Or continue with
-              </span>
+
+            <div>
+              <label className="block text-sm font-bold text-gray-300 mb-2">
+                Password <span className="text-red-500">*</span>
+              </label>
+              <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                className="w-full px-4 py-3 bg-black border-2 border-gray-700 rounded-lg text-white placeholder-gray-500 focus:border-red-500 focus:outline-none transition-colors font-medium"
+                placeholder="Enter your password"
+                required
+              />
             </div>
+
+            <button
+              type="submit"
+              disabled={isLoading}
+              className="w-full bg-gradient-to-r from-red-600 to-orange-600 text-white py-4 px-8 rounded-lg font-bold text-lg hover:from-red-700 hover:to-orange-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all transform hover:scale-105 shadow-lg animate-glow"
+            >
+              {isLoading
+                ? "LOADING..."
+                : isSignUp
+                ? "SIGN UP"
+                : "SIGN IN"}
+            </button>
+          </form>
+
+          <div className="mt-6">
+            <div className="relative">
+              <div className="absolute inset-0 flex items-center">
+                <div className="w-full border-t border-gray-700"></div>
+              </div>
+              <div className="relative flex justify-center text-sm">
+                <span className="px-4 bg-gray-900 text-gray-400 font-bold">
+                  Or continue with
+                </span>
+              </div>
+            </div>
+
+            <button
+              type="button"
+              onClick={handleGoogleSignIn}
+              disabled={isLoading}
+              className="mt-6 w-full bg-black border-2 border-gray-700 text-gray-300 py-3 px-4 rounded-lg font-bold hover:border-red-500 hover:text-white transition-all"
+            >
+              Google
+            </button>
           </div>
 
-          <button
-            type="button"
-            onClick={handleGoogleSignIn}
-            disabled={isLoading}
-            className="mt-6 w-full bg-black border-2 border-gray-700 text-gray-300 py-3 px-4 rounded-lg font-bold hover:border-red-500 hover:text-white transition-all"
-          >
-            Google
-          </button>
+          <p className="mt-6 text-center text-sm text-gray-400">
+            {isSignUp ? "Already have an account? " : "Don't have an account? "}
+            <button
+              type="button"
+              onClick={() => {
+                setIsSignUp(!isSignUp);
+                setError("");
+              }}
+              className="text-red-500 hover:text-red-400 hover:underline font-bold"
+            >
+              {isSignUp ? "Sign In" : "Sign Up"}
+            </button>
+          </p>
         </div>
-
-        <p className="mt-6 text-center text-sm text-gray-400">
-          {isSignUp ? "Already have an account? " : "Don't have an account? "}
-          <button
-            type="button"
-            onClick={() => {
-              setIsSignUp(!isSignUp);
-              setError("");
-            }}
-            className="text-red-500 hover:text-red-400 hover:underline font-bold"
-          >
-            {isSignUp ? "Sign In" : "Sign Up"}
-          </button>
-        </p>
       </div>
     </div>
   );
