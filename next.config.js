@@ -1,9 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  basePath: '/app',
-  // Important: This makes the app work under achieveyes.com/app
-  // All routes will automatically be prefixed with /app
+  // Using subdomain app.achieveyes.com instead of achieveyes.com/app
+  // No basePath needed for subdomain setup
 }
 
 module.exports = nextConfig
