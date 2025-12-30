@@ -68,23 +68,21 @@ export default function SignInPage() {
       <div className="bg-white rounded-2xl shadow-2xl" style={{ width: '100%', maxWidth: '28rem', padding: '3rem' }}>
         {/* Logo/Title with Orange Branding */}
         <div className="text-center mb-12">
-          <h1 className="text-5xl md:text-6xl font-bebas tracking-tight mb-4">
+          <h1 className="text-5xl md:text-6xl font-bebas tracking-tight mb-4 flex items-center justify-center gap-2">
             <span 
-              className="block"
               style={{
                 color: '#ea580c',
                 WebkitTextStroke: '2px white',
-                textShadow: '0 0 10px rgba(255, 255, 255, 0.5)'
+                textShadow: '0 0 15px rgba(255, 255, 255, 0.6), 0 0 30px rgba(234, 88, 12, 0.4)'
               } as React.CSSProperties}
             >
               ACHIEVE
             </span>
             <span 
-              className="block"
               style={{
                 color: 'white',
                 WebkitTextStroke: '2px #ea580c',
-                textShadow: '0 0 10px rgba(234, 88, 12, 0.5)'
+                textShadow: '0 0 15px rgba(234, 88, 12, 0.6), 0 0 30px rgba(255, 255, 255, 0.4)'
               } as React.CSSProperties}
             >
               YES
