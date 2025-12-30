@@ -74,9 +74,8 @@ export default function SignInPage() {
               style={{
                 color: '#ea580c',
                 WebkitTextStroke: '2px white',
-                textStroke: '2px white',
                 textShadow: '0 0 10px rgba(255, 255, 255, 0.5)'
-              }}
+              } as React.CSSProperties}
             >
               ACHIEVE
             </span>
@@ -85,9 +84,8 @@ export default function SignInPage() {
               style={{
                 color: 'white',
                 WebkitTextStroke: '2px #ea580c',
-                textStroke: '2px #ea580c',
                 textShadow: '0 0 10px rgba(234, 88, 12, 0.5)'
-              }}
+              } as React.CSSProperties}
             >
               YES
             </span>
