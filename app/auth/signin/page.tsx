@@ -59,18 +59,18 @@ export default function SignInPage() {
   };
 
   return (
-    <div className="min-h-screen bg-black flex items-center justify-center px-4 py-12">
-      {/* Clean White Card Design */}
-      <div className="bg-white rounded-2xl shadow-2xl w-full max-w-md p-8 md:p-10">
-        {/* Logo/Title */}
-        <div className="text-center mb-8">
-          <h1 className="text-4xl md:text-5xl font-bebas tracking-tight mb-2">
-            <span className="bg-gradient-to-r from-red-500 via-orange-500 to-red-600 bg-clip-text text-transparent">
+    <div className="min-h-screen bg-black flex items-center justify-center px-8 md:px-16 lg:px-32 xl:px-48 py-12">
+      {/* Centered Card with Large Margins */}
+      <div className="bg-white rounded-2xl shadow-2xl w-full max-w-md p-10 md:p-12">
+        {/* Logo/Title with Orange/Red Branding */}
+        <div className="text-center mb-10">
+          <h1 className="text-5xl md:text-6xl font-bebas tracking-tight mb-3">
+            <span className="bg-gradient-to-r from-red-500 via-orange-500 to-red-600 bg-clip-text text-transparent block">
               ACHIEVE
             </span>
-            <span className="text-gray-900">YES</span>
+            <span className="text-gray-900 block">YES</span>
           </h1>
-          <p className="text-gray-600 mt-3 text-sm font-medium">
+          <p className="text-gray-600 mt-4 text-sm font-medium">
             {isSignUp
               ? "Create your account to start achieving"
               : "Sign in to continue your journey"}
@@ -78,12 +78,12 @@ export default function SignInPage() {
         </div>
 
         {error && (
-          <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg mb-6 text-sm">
+          <div className="bg-red-50 border-2 border-red-500 text-red-700 px-4 py-3 rounded-lg mb-6 text-sm font-semibold">
             {error}
           </div>
         )}
 
-        <form onSubmit={handleEmailSignIn} className="space-y-5">
+        <form onSubmit={handleEmailSignIn} className="space-y-6">
           {isSignUp && (
             <div>
               <label className="block text-sm font-semibold text-gray-700 mb-2">
@@ -93,7 +93,7 @@ export default function SignInPage() {
                 type="text"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:border-red-500 focus:ring-2 focus:ring-red-500/20 focus:outline-none transition-all"
+                className="w-full px-4 py-3 bg-white border-2 border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 focus:outline-none transition-all"
                 placeholder="Your full name"
                 required
               />
@@ -108,7 +108,7 @@ export default function SignInPage() {
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:border-red-500 focus:ring-2 focus:ring-red-500/20 focus:outline-none transition-all"
+              className="w-full px-4 py-3 bg-white border-2 border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 focus:outline-none transition-all"
               placeholder="your@email.com"
               required
             />
@@ -122,7 +122,7 @@ export default function SignInPage() {
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:border-red-500 focus:ring-2 focus:ring-red-500/20 focus:outline-none transition-all"
+              className="w-full px-4 py-3 bg-white border-2 border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 focus:outline-none transition-all"
               placeholder="Enter your password"
               required
             />
@@ -131,7 +131,7 @@ export default function SignInPage() {
           <button
             type="submit"
             disabled={isLoading}
-            className="w-full bg-gradient-to-r from-red-600 to-orange-600 text-white py-3 px-6 rounded-lg font-semibold hover:from-red-700 hover:to-orange-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all shadow-md hover:shadow-lg"
+            className="w-full bg-gradient-to-r from-red-600 via-orange-500 to-red-600 text-white py-3.5 px-6 rounded-lg font-bold hover:from-red-700 hover:via-orange-600 hover:to-red-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all shadow-lg hover:shadow-xl transform hover:scale-[1.02]"
           >
             {isLoading
               ? "Loading..."
@@ -141,7 +141,7 @@ export default function SignInPage() {
           </button>
         </form>
 
-        <div className="mt-6">
+        <div className="mt-8">
           <div className="relative">
             <div className="absolute inset-0 flex items-center">
               <div className="w-full border-t border-gray-200"></div>
@@ -157,30 +157,30 @@ export default function SignInPage() {
             type="button"
             onClick={handleGoogleSignIn}
             disabled={isLoading}
-            className="mt-6 w-full bg-white border border-gray-300 text-gray-700 py-3 px-4 rounded-lg font-semibold hover:border-gray-400 hover:bg-gray-50 transition-all"
+            className="mt-6 w-full bg-white border-2 border-gray-300 text-gray-700 py-3 px-4 rounded-lg font-semibold hover:border-orange-500 hover:bg-orange-50 transition-all"
           >
             Google
           </button>
         </div>
 
-        <div className="mt-6 text-center">
+        <div className="mt-8 text-center">
           <button
             type="button"
             onClick={() => {
               setIsSignUp(!isSignUp);
               setError("");
             }}
-            className="text-sm text-gray-600 hover:text-red-600 transition-colors"
+            className="text-sm text-gray-600 hover:text-orange-600 transition-colors"
           >
             {isSignUp ? (
               <>
                 Already have an account?{" "}
-                <span className="font-semibold text-red-600">Sign In</span>
+                <span className="font-bold text-orange-600">Sign In</span>
               </>
             ) : (
               <>
                 Don't have an account?{" "}
-                <span className="font-semibold text-red-600">Sign Up</span>
+                <span className="font-bold text-orange-600">Sign Up</span>
               </>
             )}
           </button>
