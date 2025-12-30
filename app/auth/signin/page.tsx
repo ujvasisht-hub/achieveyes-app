@@ -99,9 +99,9 @@ export default function SignInPage() {
           </div>
         )}
 
-        <form onSubmit={handleEmailSignIn} className="space-y-8">
+        <form onSubmit={handleEmailSignIn}>
           {isSignUp && (
-            <div>
+            <div className="mb-6">
               <label className="block text-sm font-semibold text-gray-700 mb-3">
                 Name
               </label>
@@ -116,7 +116,7 @@ export default function SignInPage() {
             </div>
           )}
 
-          <div>
+          <div className="mb-6">
             <label className="block text-sm font-semibold text-gray-700 mb-3">
               Email Address
             </label>
@@ -130,7 +130,7 @@ export default function SignInPage() {
             />
           </div>
 
-          <div>
+          <div className="mb-8">
             <label className="block text-sm font-semibold text-gray-700 mb-3">
               Password
             </label>
@@ -147,7 +147,7 @@ export default function SignInPage() {
           <button
             type="submit"
             disabled={isLoading}
-            className="w-full bg-gradient-to-r from-red-600 via-orange-500 to-red-600 text-white py-4 px-6 rounded-lg font-bold hover:from-red-700 hover:via-orange-600 hover:to-red-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all shadow-lg hover:shadow-xl transform hover:scale-[1.02] mt-2"
+            className="w-full bg-gradient-to-r from-red-600 via-orange-500 to-red-600 text-white py-4 px-6 rounded-lg font-bold hover:from-red-700 hover:via-orange-600 hover:to-red-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all shadow-lg hover:shadow-xl transform hover:scale-[1.02]"
           >
             {isLoading
               ? "Loading..."
@@ -157,7 +157,7 @@ export default function SignInPage() {
           </button>
         </form>
 
-        <div className="mt-10">
+        <div className="mt-12">
           <div className="relative">
             <div className="absolute inset-0 flex items-center">
               <div className="w-full border-t border-gray-200"></div>
@@ -179,7 +179,7 @@ export default function SignInPage() {
           </button>
         </div>
 
-        <div className="mt-10 text-center">
+        <div className="mt-12 text-center">
           <button
             type="button"
             onClick={() => {
