@@ -59,9 +59,9 @@ export default function SignInPage() {
   };
 
   return (
-    <div className="min-h-screen bg-black flex items-center justify-center px-8 md:px-16 lg:px-32 xl:px-48 py-12">
-      {/* Centered Card with Large Margins */}
-      <div className="bg-white rounded-2xl shadow-2xl w-full max-w-md p-10 md:p-12">
+    <div className="min-h-screen bg-black flex items-center justify-center" style={{ paddingLeft: '8rem', paddingRight: '8rem' }}>
+      {/* Centered Card with Large Margins - FORCE WHITE CARD */}
+      <div className="bg-white rounded-2xl shadow-2xl" style={{ width: '100%', maxWidth: '28rem', padding: '3rem' }}>
         {/* Logo/Title with Orange/Red Branding */}
         <div className="text-center mb-10">
           <h1 className="text-5xl md:text-6xl font-bebas tracking-tight mb-3">
