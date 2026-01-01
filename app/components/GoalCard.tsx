@@ -23,7 +23,7 @@ export default function GoalCard({ goal, onUpdate }: GoalCardProps) {
 
   return (
     <Link href={`/goals/${goal.id}`}>
-      <div className="bg-white border-2 border-orange-300 rounded-xl p-6 hover:border-orange-500 hover:shadow-xl transition-all cursor-pointer shadow-lg">
+      <div className="bg-white border border-orange-200 rounded-lg p-5 hover:border-orange-400 hover:shadow-md transition-all cursor-pointer shadow-sm">
         <div className="flex items-start justify-between mb-4">
           <div className="flex-1">
             <h3 className="text-xl font-bold text-gray-800 mb-2 line-clamp-2">

@@ -111,10 +111,10 @@ export default function GoalDetailPage() {
   const progress = totalProcessGoals > 0 ? (completedProcessGoals / totalProcessGoals) * 100 : 0;
 
   return (
-    <div className="min-h-screen">
-      <div className="max-w-6xl mx-auto px-8 md:px-16 lg:px-24 xl:px-32 py-12">
+    <div className="min-h-screen bg-gray-50">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header */}
-        <div className="bg-white rounded-xl shadow-lg p-6 mb-8 border-2 border-orange-200">
+        <div className="bg-white rounded-lg shadow-sm p-6 mb-6 border border-orange-200">
           <button
             onClick={() => router.push("/")}
             className="text-orange-600 hover:underline mb-4 font-medium"
@@ -139,8 +139,8 @@ export default function GoalDetailPage() {
         </div>
 
         {/* Progress Overview */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-          <div className="bg-white rounded-xl shadow-lg p-6 border-2 border-orange-200">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+          <div className="bg-white rounded-lg shadow-sm p-4 border border-orange-200">
             <div className="flex items-center justify-between mb-4">
               <h3 className="text-lg font-semibold text-gray-800">
                 Overall Progress
@@ -158,7 +158,7 @@ export default function GoalDetailPage() {
             </div>
           </div>
 
-          <div className="bg-white rounded-xl shadow-lg p-6 border-2 border-orange-200">
+          <div className="bg-white rounded-lg shadow-sm p-4 border border-orange-200">
             <div className="flex items-center justify-between mb-4">
               <h3 className="text-lg font-semibold text-gray-800">
                 Process Goals
@@ -170,7 +170,7 @@ export default function GoalDetailPage() {
             </div>
           </div>
 
-          <div className="bg-white rounded-xl shadow-lg p-6 border-2 border-orange-200">
+          <div className="bg-white rounded-lg shadow-sm p-4 border border-orange-200">
             <div className="flex items-center justify-between mb-4">
               <h3 className="text-lg font-semibold text-gray-800">
                 Habit Goals
@@ -185,7 +185,7 @@ export default function GoalDetailPage() {
 
         {/* Progress Chart */}
         {goal.processGoals && goal.processGoals.length > 0 && (
-          <div className="bg-white rounded-xl shadow-lg p-6 mb-8 border-2 border-orange-200">
+          <div className="bg-white rounded-lg shadow-sm p-6 mb-6 border border-orange-200">
             <h2 className="text-2xl font-bold text-gray-800 mb-4">
               Progress Chart
             </h2>
@@ -194,7 +194,7 @@ export default function GoalDetailPage() {
         )}
 
         {/* Process Goals */}
-        <div className="bg-white rounded-xl shadow-lg p-6 mb-8 border-2 border-orange-200">
+        <div className="bg-white rounded-lg shadow-sm p-6 mb-6 border border-orange-200">
           <h2 className="text-2xl font-bold text-gray-800 mb-4">
             Process Goals
           </h2>
@@ -259,7 +259,7 @@ export default function GoalDetailPage() {
         </div>
 
         {/* Habit Goals */}
-        <div className="bg-white rounded-xl shadow-lg p-6 mb-8 border-2 border-orange-200">
+        <div className="bg-white rounded-lg shadow-sm p-6 mb-6 border border-orange-200">
           <h2 className="text-2xl font-bold text-gray-800 mb-4">
             Habit Goals
           </h2>
@@ -344,7 +344,7 @@ export default function GoalDetailPage() {
 
         {/* Milestones */}
         {goal.milestones && goal.milestones.length > 0 && (
-          <div className="bg-white rounded-xl shadow-lg p-6 border-2 border-orange-200">
+          <div className="bg-white rounded-lg shadow-sm p-6 border border-orange-200">
             <h2 className="text-2xl font-bold text-gray-800 mb-4">
               Milestones
             </h2>

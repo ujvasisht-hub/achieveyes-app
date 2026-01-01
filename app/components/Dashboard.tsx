@@ -67,21 +67,21 @@ export default function Dashboard() {
   }
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <header className="bg-white/80 backdrop-blur-sm border-b-2 border-orange-300 shadow-lg">
-        <div className="max-w-6xl mx-auto px-8 md:px-16 lg:px-24 xl:px-32 py-6">
+      <header className="bg-white border-b-2 border-orange-200 shadow-sm">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex justify-between items-center">
             <div>
               <h1 className="text-4xl font-bebas tracking-tight flex items-center gap-2">
-                <span className="text-[#ea580c]" style={mounted ? { textShadow: '0 0 10px rgba(234, 88, 12, 0.3)' } : {}}>
+                <span className="text-[#ea580c]">
                   ACHIEVE
                 </span>
-                <span className="text-gray-800" style={mounted ? { textShadow: '0 0 10px rgba(0, 0, 0, 0.1)' } : {}}>
+                <span className="text-gray-800">
                   YES
                 </span>
               </h1>
-              <p className="text-gray-700 mt-2 font-medium">
+              <p className="text-gray-600 mt-2 font-medium">
                 Welcome back, {session?.user?.name || session?.user?.email}!
               </p>
             </div>
@@ -99,10 +99,10 @@ export default function Dashboard() {
       </header>
 
       {/* Main Content */}
-      <main className="max-w-6xl mx-auto px-8 md:px-16 lg:px-24 xl:px-32 py-12">
+      <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-          <div className="bg-white border-2 border-orange-300 rounded-xl p-6 shadow-lg">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+          <div className="bg-white border border-orange-200 rounded-lg p-4 shadow-sm">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-gray-600 text-sm font-bold mb-2">Active Goals</p>
@@ -113,7 +113,7 @@ export default function Dashboard() {
               <Target className="w-12 h-12 text-orange-500" />
             </div>
           </div>
-          <div className="bg-white border-2 border-orange-300 rounded-xl p-6 shadow-lg">
+          <div className="bg-white border border-orange-200 rounded-lg p-4 shadow-sm">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-gray-600 text-sm font-bold mb-2">Completed</p>
@@ -124,7 +124,7 @@ export default function Dashboard() {
               <Trophy className="w-12 h-12 text-orange-600" />
             </div>
           </div>
-          <div className="bg-white border-2 border-orange-300 rounded-xl p-6 shadow-lg">
+          <div className="bg-white border border-orange-200 rounded-lg p-4 shadow-sm">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-gray-600 text-sm font-bold mb-2">Total Progress</p>
@@ -163,7 +163,7 @@ export default function Dashboard() {
         </div>
 
         {goals.length === 0 ? (
-          <div className="bg-white border-2 border-orange-300 rounded-xl p-12 text-center shadow-lg">
+          <div className="bg-white border border-orange-200 rounded-lg p-12 text-center shadow-sm">
             <Target className="w-16 h-16 text-orange-500 mx-auto mb-4" />
             <h3 className="text-2xl font-bebas text-gray-800 mb-2">
               NO GOALS YET

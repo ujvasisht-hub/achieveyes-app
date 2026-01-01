@@ -203,8 +203,8 @@ export default function NewGoalPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4">
-      <div className="bg-white rounded-xl shadow-2xl w-full max-w-2xl p-8 mx-auto" style={{ marginLeft: 'auto', marginRight: 'auto', maxWidth: '42rem' }}>
+    <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
+      <div className="bg-white rounded-lg shadow-sm w-full max-w-2xl p-8 mx-auto">
         {/* Progress Bar */}
         <div className="mb-8">
           <div className="flex justify-between text-sm text-gray-600 mb-2">

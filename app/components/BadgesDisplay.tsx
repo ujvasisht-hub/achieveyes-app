@@ -32,7 +32,7 @@ export default function BadgesDisplay({ badges }: BadgesDisplayProps) {
 
   if (badges.length === 0) {
     return (
-      <div className="bg-white rounded-xl shadow-lg p-6 border-2 border-orange-200">
+      <div className="bg-white rounded-lg shadow-sm p-6 border border-orange-200">
         <h2 className="text-2xl font-bold text-gray-800 mb-4">
           Your Badges
         </h2>
@@ -44,7 +44,7 @@ export default function BadgesDisplay({ badges }: BadgesDisplayProps) {
   }
 
   return (
-    <div className="bg-white rounded-xl shadow-lg p-6 border-2 border-orange-200">
+    <div className="bg-white rounded-lg shadow-sm p-6 border border-orange-200">
       <h2 className="text-2xl font-bold text-gray-800 mb-4">
         Your Badges ({badges.length})
       </h2>

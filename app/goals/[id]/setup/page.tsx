@@ -152,9 +152,9 @@ export default function GoalSetupPage() {
   }
 
   return (
-    <div className="min-h-screen p-4">
-      <div className="max-w-4xl mx-auto px-8 md:px-16 lg:px-24 xl:px-32">
-        <div className="bg-white rounded-xl shadow-2xl p-8 border-2 border-orange-200">
+    <div className="min-h-screen bg-gray-50 p-4">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-white rounded-lg shadow-sm p-8 border border-orange-200">
           <h1 className="text-3xl font-bold text-gray-800 mb-2">
             Set Up Your Goal
           </h1>
