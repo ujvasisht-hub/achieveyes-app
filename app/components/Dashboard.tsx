@@ -3,8 +3,8 @@
 import { useSession, signOut } from "next-auth/react";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { useTheme } from "./ThemeProvider";
-import { Moon, Sun, Plus, LogOut, Trophy, Target, TrendingUp } from "lucide-react";
+// import { useTheme } from "./ThemeProvider"; // Commented out to prevent SSR issues
+import { Plus, LogOut, Trophy, Target, TrendingUp } from "lucide-react";
 import GoalCard from "./GoalCard";
 import BadgesDisplay from "./BadgesDisplay";
 
@@ -21,12 +21,13 @@ interface Goal {
 
 export default function Dashboard() {
   const { data: session } = useSession();
-  const { theme, toggleTheme } = useTheme();
   const [goals, setGoals] = useState<Goal[]>([]);
   const [badges, setBadges] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     fetchGoals();
     fetchBadges();
   }, []);
@@ -73,10 +74,10 @@ export default function Dashboard() {
           <div className="flex justify-between items-center">
             <div>
               <h1 className="text-4xl font-bebas tracking-tight flex items-center gap-2">
-                <span className="text-[#ea580c]" style={{ textShadow: '0 0 10px rgba(234, 88, 12, 0.3)' }}>
+                <span className="text-[#ea580c]" style={mounted ? { textShadow: '0 0 10px rgba(234, 88, 12, 0.3)' } : {}}>
                   ACHIEVE
                 </span>
-                <span className="text-white" style={{ textShadow: '0 0 10px rgba(255, 255, 255, 0.3)' }}>
+                <span className="text-gray-800" style={mounted ? { textShadow: '0 0 10px rgba(0, 0, 0, 0.1)' } : {}}>
                   YES
                 </span>
               </h1>
@@ -85,16 +86,6 @@ export default function Dashboard() {
               </p>
             </div>
             <div className="flex items-center gap-4">
-              <button
-                onClick={toggleTheme}
-                className="p-2 rounded-lg bg-white border-2 border-orange-200 hover:border-orange-400 transition-colors shadow-sm"
-              >
-                {theme === "dark" ? (
-                  <Sun className="w-5 h-5 text-orange-600" />
-                ) : (
-                  <Moon className="w-5 h-5 text-gray-600" />
-                )}
-              </button>
               <button
                 onClick={() => signOut()}
                 className="flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-orange-600 to-red-600 text-white rounded-lg hover:from-orange-700 hover:to-red-700 transition-all font-bold shadow-md"
