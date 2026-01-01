@@ -105,10 +105,10 @@ export default function Dashboard() {
         <div className="w-full max-w-[33.33vw] px-6">
         {/* Stats */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-          <div className="bg-white border border-orange-200 rounded-lg p-6 shadow-sm">
+          <div className="bg-white border border-orange-200 rounded-lg p-8 shadow-sm">
             <div className="flex items-center justify-between">
-              <div className="flex-1 pr-4">
-                <p className="text-gray-600 text-sm font-bold mb-2">Active Goals</p>
+              <div className="flex-1 pr-6">
+                <p className="text-gray-600 text-sm font-bold mb-3">Active Goals</p>
                 <p className="text-4xl font-bebas text-[#ea580c]">
                   {goals.filter((g) => !g.isCompleted).length}
                 </p>
@@ -116,10 +116,10 @@ export default function Dashboard() {
               <Target className="w-12 h-12 text-orange-500 flex-shrink-0" />
             </div>
           </div>
-          <div className="bg-white border border-orange-200 rounded-lg p-6 shadow-sm">
+          <div className="bg-white border border-orange-200 rounded-lg p-8 shadow-sm">
             <div className="flex items-center justify-between">
-              <div className="flex-1 pr-4">
-                <p className="text-gray-600 text-sm font-bold mb-2">Completed</p>
+              <div className="flex-1 pr-6">
+                <p className="text-gray-600 text-sm font-bold mb-3">Completed</p>
                 <p className="text-4xl font-bebas text-orange-600">
                   {goals.filter((g) => g.isCompleted).length}
                 </p>
@@ -127,10 +127,10 @@ export default function Dashboard() {
               <Trophy className="w-12 h-12 text-orange-600 flex-shrink-0" />
             </div>
           </div>
-          <div className="bg-white border border-orange-200 rounded-lg p-6 shadow-sm">
+          <div className="bg-white border border-orange-200 rounded-lg p-8 shadow-sm">
             <div className="flex items-center justify-between">
-              <div className="flex-1 pr-4">
-                <p className="text-gray-600 text-sm font-bold mb-2">Total Progress</p>
+              <div className="flex-1 pr-6">
+                <p className="text-gray-600 text-sm font-bold mb-3">Total Progress</p>
                 <p className="text-4xl font-bebas text-[#ea580c]">
                   {goals.length > 0
                     ? Math.round(
