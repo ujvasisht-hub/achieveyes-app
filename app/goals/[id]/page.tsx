@@ -112,7 +112,8 @@ export default function GoalDetailPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <div className="max-w-2xl mx-auto px-8 sm:px-12 md:px-16 lg:px-20 xl:px-24 py-8">
+      <div className="w-full py-8 flex justify-center">
+        <div className="w-full max-w-[33.33vw] px-6">
         {/* Header */}
         <div className="bg-white rounded-lg shadow-sm p-6 mb-6 border border-orange-200">
           <button
@@ -376,6 +377,7 @@ export default function GoalDetailPage() {
             </div>
           </div>
         )}
+        </div>
       </div>
 
       {showCheckIn && selectedItem && (

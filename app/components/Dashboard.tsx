@@ -70,7 +70,8 @@ export default function Dashboard() {
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
       <header className="bg-white border-b-2 border-orange-200 shadow-sm">
-        <div className="max-w-2xl mx-auto px-8 sm:px-12 md:px-16 lg:px-20 xl:px-24 py-6">
+        <div className="w-full flex justify-center">
+          <div className="w-full max-w-[33.33vw] py-6 px-6">
           <div className="flex justify-between items-center">
             <div>
               <h1 className="text-4xl font-bebas tracking-tight flex items-center gap-2">
@@ -99,7 +100,8 @@ export default function Dashboard() {
       </header>
 
       {/* Main Content */}
-      <main className="max-w-2xl mx-auto px-8 sm:px-12 md:px-16 lg:px-20 xl:px-24 py-8">
+      <main className="w-full py-8 flex justify-center">
+        <div className="w-full max-w-[33.33vw] px-6">
         {/* Stats */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
           <div className="bg-white border border-orange-200 rounded-lg p-6 shadow-sm">
@@ -188,8 +190,9 @@ export default function Dashboard() {
         )}
 
         {/* Badges Section */}
-        <div className="mt-8 mx-4">
+        <div className="mt-8">
           <BadgesDisplay badges={badges} />
+        </div>
         </div>
       </main>
     </div>

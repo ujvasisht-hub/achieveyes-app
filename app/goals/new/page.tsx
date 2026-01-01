@@ -203,8 +203,9 @@ export default function NewGoalPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center p-8 sm:p-12 md:p-16 lg:p-20 xl:p-24">
-      <div className="bg-white rounded-lg shadow-sm w-full max-w-2xl p-8 mx-auto">
+    <div className="min-h-screen bg-gray-50 flex items-center justify-center w-full">
+      <div className="w-full max-w-[33.33vw] px-6">
+        <div className="bg-white rounded-lg shadow-sm w-full p-8">
         {/* Progress Bar */}
         <div className="mb-8">
           <div className="flex justify-between text-sm text-gray-600 mb-2">
@@ -255,6 +256,7 @@ export default function NewGoalPage() {
               <ArrowRight className="w-4 h-4" />
             </button>
           )}
+        </div>
         </div>
       </div>
     </div>
