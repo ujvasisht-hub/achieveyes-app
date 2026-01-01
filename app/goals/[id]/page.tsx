@@ -93,7 +93,7 @@ export default function GoalDetailPage() {
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <div className="text-xl">Loading...</div>
+        <div className="text-xl text-gray-800 font-bebas">Loading...</div>
       </div>
     );
   }
@@ -101,7 +101,7 @@ export default function GoalDetailPage() {
   if (!goal) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <div className="text-xl">Goal not found</div>
+        <div className="text-xl text-gray-800 font-bebas">Goal not found</div>
       </div>
     );
   }
@@ -111,26 +111,26 @@ export default function GoalDetailPage() {
   const progress = totalProcessGoals > 0 ? (completedProcessGoals / totalProcessGoals) * 100 : 0;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-red-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div className="min-h-screen">
+      <div className="max-w-6xl mx-auto px-8 md:px-16 lg:px-24 xl:px-32 py-12">
         {/* Header */}
-        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 mb-6">
+        <div className="bg-white rounded-xl shadow-lg p-6 mb-8 border-2 border-orange-200">
           <button
             onClick={() => router.push("/")}
-            className="text-purple-600 dark:text-purple-400 hover:underline mb-4"
+            className="text-orange-600 hover:underline mb-4 font-medium"
           >
             ← Back to Dashboard
           </button>
-          <h1 className="text-3xl font-bold text-gray-800 dark:text-white mb-2">
+          <h1 className="text-3xl font-bold text-gray-800 mb-2">
             {goal.realGoal}
           </h1>
-          <div className="flex items-center gap-4 text-gray-600 dark:text-gray-400">
+          <div className="flex items-center gap-4 text-gray-600">
             <div className="flex items-center gap-2">
-              <Calendar className="w-5 h-5" />
+              <Calendar className="w-5 h-5 text-orange-500" />
               <span>Due: {formatDate(new Date(goal.deadline))}</span>
             </div>
             {goal.isCompleted && (
-              <div className="flex items-center gap-2 text-green-600 dark:text-green-400">
+              <div className="flex items-center gap-2 text-green-600">
                 <CheckCircle2 className="w-5 h-5" />
                 <span>Completed!</span>
               </div>
@@ -139,45 +139,45 @@ export default function GoalDetailPage() {
         </div>
 
         {/* Progress Overview */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          <div className="bg-white rounded-xl shadow-lg p-6 border-2 border-orange-200">
             <div className="flex items-center justify-between mb-4">
-              <h3 className="text-lg font-semibold text-gray-800 dark:text-white">
+              <h3 className="text-lg font-semibold text-gray-800">
                 Overall Progress
               </h3>
-              <TrendingUp className="w-6 h-6 text-purple-500" />
+              <TrendingUp className="w-6 h-6 text-orange-500" />
             </div>
-            <div className="text-4xl font-bold text-gray-800 dark:text-white mb-2">
+            <div className="text-4xl font-bold text-gray-800 mb-2">
               {Math.round(progress)}%
             </div>
-            <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3">
+            <div className="w-full bg-orange-100 rounded-full h-3">
               <div
-                className="bg-gradient-to-r from-purple-500 to-pink-500 h-3 rounded-full transition-all"
+                className="bg-gradient-to-r from-orange-600 to-red-600 h-3 rounded-full transition-all"
                 style={{ width: `${progress}%` }}
               />
             </div>
           </div>
 
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
+          <div className="bg-white rounded-xl shadow-lg p-6 border-2 border-orange-200">
             <div className="flex items-center justify-between mb-4">
-              <h3 className="text-lg font-semibold text-gray-800 dark:text-white">
+              <h3 className="text-lg font-semibold text-gray-800">
                 Process Goals
               </h3>
-              <Target className="w-6 h-6 text-blue-500" />
+              <Target className="w-6 h-6 text-orange-500" />
             </div>
-            <div className="text-4xl font-bold text-gray-800 dark:text-white">
+            <div className="text-4xl font-bold text-gray-800">
               {completedProcessGoals}/{totalProcessGoals}
             </div>
           </div>
 
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
+          <div className="bg-white rounded-xl shadow-lg p-6 border-2 border-orange-200">
             <div className="flex items-center justify-between mb-4">
-              <h3 className="text-lg font-semibold text-gray-800 dark:text-white">
+              <h3 className="text-lg font-semibold text-gray-800">
                 Habit Goals
               </h3>
               <Flame className="w-6 h-6 text-orange-500" />
             </div>
-            <div className="text-4xl font-bold text-gray-800 dark:text-white">
+            <div className="text-4xl font-bold text-gray-800">
               {goal.habitGoals?.length || 0}
             </div>
           </div>
@@ -185,8 +185,8 @@ export default function GoalDetailPage() {
 
         {/* Progress Chart */}
         {goal.processGoals && goal.processGoals.length > 0 && (
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 mb-6">
-            <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-4">
+          <div className="bg-white rounded-xl shadow-lg p-6 mb-8 border-2 border-orange-200">
+            <h2 className="text-2xl font-bold text-gray-800 mb-4">
               Progress Chart
             </h2>
             <ProgressChart goal={goal} />
@@ -194,8 +194,8 @@ export default function GoalDetailPage() {
         )}
 
         {/* Process Goals */}
-        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 mb-6">
-          <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-4">
+        <div className="bg-white rounded-xl shadow-lg p-6 mb-8 border-2 border-orange-200">
+          <h2 className="text-2xl font-bold text-gray-800 mb-4">
             Process Goals
           </h2>
           <div className="space-y-4">
@@ -206,25 +206,25 @@ export default function GoalDetailPage() {
               return (
                 <div
                   key={pg.id}
-                  className={`border rounded-lg p-4 ${
+                  className={`border-2 rounded-lg p-4 ${
                     pg.isCompleted
-                      ? "border-green-500 bg-green-50 dark:bg-green-900/20"
+                      ? "border-green-500 bg-green-50"
                       : isPastDue
-                      ? "border-red-500 bg-red-50 dark:bg-red-900/20"
-                      : "border-gray-300 dark:border-gray-600"
+                      ? "border-red-500 bg-red-50"
+                      : "border-orange-200 bg-white"
                   }`}
                 >
                   <div className="flex justify-between items-start mb-2">
                     <div className="flex-1">
-                      <h3 className="font-semibold text-gray-800 dark:text-white">
+                      <h3 className="font-semibold text-gray-800">
                         {pg.title}
                       </h3>
                       {pg.description && (
-                        <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
+                        <p className="text-sm text-gray-600 mt-1">
                           {pg.description}
                         </p>
                       )}
-                      <p className="text-xs text-gray-500 dark:text-gray-500 mt-2">
+                      <p className="text-xs text-gray-500 mt-2">
                         {formatDate(new Date(pg.periodStart))} -{" "}
                         {formatDate(new Date(pg.periodEnd))}
                       </p>
@@ -235,12 +235,12 @@ export default function GoalDetailPage() {
                       ) : (
                         <button
                           onClick={() => handleCheckIn(pg, "process")}
-                          className={`px-4 py-2 rounded-lg text-sm font-semibold transition-all ${
+                          className={`px-4 py-2 rounded-lg text-sm font-semibold transition-all shadow-md ${
                             todayCheckIn?.isAccomplished
                               ? "bg-green-500 text-white"
                               : todayCheckIn
                               ? "bg-red-500 text-white"
-                              : "bg-purple-500 text-white hover:bg-purple-600"
+                              : "bg-gradient-to-r from-orange-600 to-red-600 text-white hover:from-orange-700 hover:to-red-700"
                           }`}
                         >
                           {todayCheckIn?.isAccomplished
@@ -259,8 +259,8 @@ export default function GoalDetailPage() {
         </div>
 
         {/* Habit Goals */}
-        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 mb-6">
-          <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-4">
+        <div className="bg-white rounded-xl shadow-lg p-6 mb-8 border-2 border-orange-200">
+          <h2 className="text-2xl font-bold text-gray-800 mb-4">
             Habit Goals
           </h2>
           <div className="space-y-4">
@@ -344,26 +344,26 @@ export default function GoalDetailPage() {
 
         {/* Milestones */}
         {goal.milestones && goal.milestones.length > 0 && (
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
-            <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-4">
+          <div className="bg-white rounded-xl shadow-lg p-6 border-2 border-orange-200">
+            <h2 className="text-2xl font-bold text-gray-800 mb-4">
               Milestones
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {goal.milestones.map((milestone: any) => (
                 <div
                   key={milestone.id}
-                  className={`border rounded-lg p-4 ${
+                  className={`border-2 rounded-lg p-4 ${
                     milestone.isCompleted
-                      ? "border-yellow-500 bg-yellow-50 dark:bg-yellow-900/20"
-                      : "border-gray-300 dark:border-gray-600"
+                      ? "border-yellow-500 bg-yellow-50"
+                      : "border-orange-200 bg-white"
                   }`}
                 >
                   <div className="flex items-center justify-between">
                     <div>
-                      <h3 className="font-semibold text-gray-800 dark:text-white">
+                      <h3 className="font-semibold text-gray-800">
                         {milestone.title}
                       </h3>
-                      <p className="text-sm text-gray-600 dark:text-gray-400">
+                      <p className="text-sm text-gray-600">
                         {milestone.currentValue} / {milestone.targetValue}
                       </p>
                     </div>

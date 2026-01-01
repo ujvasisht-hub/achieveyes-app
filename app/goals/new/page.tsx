@@ -90,11 +90,11 @@ export default function NewGoalPage() {
         return (
           <div className="space-y-6">
             <div className="text-center mb-8">
-              <Target className="w-16 h-16 text-purple-500 mx-auto mb-4" />
-              <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-2">
+              <Target className="w-16 h-16 text-orange-500 mx-auto mb-4" />
+              <h2 className="text-3xl font-bold text-gray-800 mb-2">
                 What is your goal?
               </h2>
-              <p className="text-gray-600 dark:text-gray-400">
+              <p className="text-gray-600">
                 Write down the goal you want to achieve
               </p>
             </div>
@@ -102,7 +102,7 @@ export default function NewGoalPage() {
               value={formData.initialGoal}
               onChange={(e) => updateFormData("initialGoal", e.target.value)}
               placeholder="e.g., I want to lose weight, I want to start a business..."
-              className="w-full h-32 px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 dark:bg-gray-700 dark:text-white resize-none"
+              className="w-full h-32 px-4 py-3 border-2 border-orange-200 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 bg-white text-gray-800 resize-none"
             />
           </div>
         );
@@ -117,10 +117,10 @@ export default function NewGoalPage() {
         return (
           <div className="space-y-6">
             <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-2">
+              <h2 className="text-3xl font-bold text-gray-800 mb-2">
                 Why #{whyNumber}?
               </h2>
-              <p className="text-gray-600 dark:text-gray-400">
+              <p className="text-gray-600">
                 {whyNumber === 1
                   ? "Why do you want to achieve this goal?"
                   : `Why is that important to you? (Drill deeper)`}
@@ -130,7 +130,7 @@ export default function NewGoalPage() {
               value={formData[whyKey]}
               onChange={(e) => updateFormData(whyKey, e.target.value)}
               placeholder="Think deeply about your motivation..."
-              className="w-full h-32 px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 dark:bg-gray-700 dark:text-white resize-none"
+              className="w-full h-32 px-4 py-3 border-2 border-orange-200 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 bg-white text-gray-800 resize-none"
             />
           </div>
         );
@@ -139,10 +139,10 @@ export default function NewGoalPage() {
         return (
           <div className="space-y-6">
             <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-2">
+              <h2 className="text-3xl font-bold text-gray-800 mb-2">
                 What is your real goal?
               </h2>
-              <p className="text-gray-600 dark:text-gray-400">
+              <p className="text-gray-600">
                 Based on your 5 whys, what is the deeper, real goal you want to achieve?
               </p>
             </div>
@@ -150,7 +150,7 @@ export default function NewGoalPage() {
               value={formData.realGoal}
               onChange={(e) => updateFormData("realGoal", e.target.value)}
               placeholder="Write your refined, real goal here..."
-              className="w-full h-32 px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 dark:bg-gray-700 dark:text-white resize-none"
+              className="w-full h-32 px-4 py-3 border-2 border-orange-200 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 bg-white text-gray-800 resize-none"
             />
           </div>
         );
@@ -159,11 +159,11 @@ export default function NewGoalPage() {
         return (
           <div className="space-y-6">
             <div className="text-center mb-8">
-              <Calendar className="w-16 h-16 text-purple-500 mx-auto mb-4" />
-              <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-2">
+              <Calendar className="w-16 h-16 text-orange-500 mx-auto mb-4" />
+              <h2 className="text-3xl font-bold text-gray-800 mb-2">
                 When do you want to achieve this?
               </h2>
-              <p className="text-gray-600 dark:text-gray-400">
+              <p className="text-gray-600">
                 Set a deadline for your goal
               </p>
             </div>
@@ -172,7 +172,7 @@ export default function NewGoalPage() {
               value={formData.deadline}
               onChange={(e) => updateFormData("deadline", e.target.value)}
               min={new Date().toISOString().split("T")[0]}
-              className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 dark:bg-gray-700 dark:text-white text-lg"
+              className="w-full px-4 py-3 border-2 border-orange-200 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 bg-white text-gray-800 text-lg"
             />
           </div>
         );
@@ -203,24 +203,24 @@ export default function NewGoalPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-red-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 flex items-center justify-center p-4">
-      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-2xl w-full max-w-2xl p-8">
+    <div className="min-h-screen flex items-center justify-center p-4">
+      <div className="bg-white rounded-xl shadow-2xl w-full max-w-2xl p-8 mx-auto" style={{ marginLeft: 'auto', marginRight: 'auto', maxWidth: '42rem' }}>
         {/* Progress Bar */}
         <div className="mb-8">
-          <div className="flex justify-between text-sm text-gray-600 dark:text-gray-400 mb-2">
+          <div className="flex justify-between text-sm text-gray-600 mb-2">
             <span>Step {steps.indexOf(step) + 1} of {steps.length}</span>
             <span>{Math.round(((steps.indexOf(step) + 1) / steps.length) * 100)}%</span>
           </div>
-          <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+          <div className="w-full bg-orange-100 rounded-full h-2">
             <div
-              className="bg-gradient-to-r from-purple-500 to-pink-500 h-2 rounded-full transition-all"
+              className="bg-gradient-to-r from-orange-600 to-red-600 h-2 rounded-full transition-all"
               style={{ width: `${((steps.indexOf(step) + 1) / steps.length) * 100}%` }}
             />
           </div>
         </div>
 
         {error && (
-          <div className="bg-red-100 dark:bg-red-900 border border-red-400 text-red-700 dark:text-red-300 px-4 py-3 rounded mb-6">
+          <div className="bg-red-100 border-2 border-red-400 text-red-700 px-4 py-3 rounded-lg mb-6">
             {error}
           </div>
         )}
@@ -231,7 +231,7 @@ export default function NewGoalPage() {
           <button
             onClick={handleBack}
             disabled={step === "goal"}
-            className="flex items-center gap-2 px-6 py-3 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+            className="flex items-center gap-2 px-6 py-3 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
           >
             <ArrowLeft className="w-4 h-4" />
             Back
@@ -240,7 +240,7 @@ export default function NewGoalPage() {
             <button
               onClick={handleSubmit}
               disabled={!canProceed() || loading}
-              className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg hover:from-purple-600 hover:to-pink-600 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+              className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-orange-600 to-red-600 text-white rounded-lg hover:from-orange-700 hover:to-red-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all shadow-md"
             >
               {loading ? "Creating..." : "Continue to Setup"}
               <ArrowRight className="w-4 h-4" />
@@ -249,7 +249,7 @@ export default function NewGoalPage() {
             <button
               onClick={handleNext}
               disabled={!canProceed()}
-              className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg hover:from-purple-600 hover:to-pink-600 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+              className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-orange-600 to-red-600 text-white rounded-lg hover:from-orange-700 hover:to-red-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all shadow-md"
             >
               Next
               <ArrowRight className="w-4 h-4" />

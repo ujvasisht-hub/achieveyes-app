@@ -146,47 +146,47 @@ export default function GoalSetupPage() {
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <div className="text-xl">Loading...</div>
+        <div className="text-xl text-gray-800 font-bebas">Loading...</div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-red-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 p-4">
-      <div className="max-w-4xl mx-auto">
-        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-2xl p-8">
-          <h1 className="text-3xl font-bold text-gray-800 dark:text-white mb-2">
+    <div className="min-h-screen p-4">
+      <div className="max-w-4xl mx-auto px-8 md:px-16 lg:px-24 xl:px-32">
+        <div className="bg-white rounded-xl shadow-2xl p-8 border-2 border-orange-200">
+          <h1 className="text-3xl font-bold text-gray-800 mb-2">
             Set Up Your Goal
           </h1>
-          <p className="text-gray-600 dark:text-gray-400 mb-8">
+          <p className="text-gray-600 mb-8">
             Define your process goals and habits to achieve: <strong>{goal?.realGoal}</strong>
           </p>
 
           {/* Process Goals */}
           <div className="mb-8">
             <div className="flex justify-between items-center mb-4">
-              <h2 className="text-2xl font-semibold text-gray-800 dark:text-white">
+              <h2 className="text-2xl font-semibold text-gray-800">
                 Process Goals
               </h2>
               <button
                 onClick={addProcessGoal}
-                className="flex items-center gap-2 px-4 py-2 bg-purple-500 text-white rounded-lg hover:bg-purple-600 transition-colors"
+                className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-orange-600 to-red-600 text-white rounded-lg hover:from-orange-700 hover:to-red-700 transition-colors shadow-md"
               >
                 <Plus className="w-4 h-4" />
                 Add Process Goal
               </button>
             </div>
-            <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+            <p className="text-sm text-gray-600 mb-4">
               What processes do you need to complete to achieve your goal?
             </p>
             <div className="space-y-4">
               {processGoals.map((pg, index) => (
                 <div
                   key={index}
-                  className="border border-gray-300 dark:border-gray-600 rounded-lg p-4"
+                  className="border-2 border-orange-200 rounded-lg p-4 bg-orange-50"
                 >
                   <div className="flex justify-between items-start mb-2">
-                    <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">
+                    <span className="text-sm font-semibold text-gray-700">
                       {pg.periodType === "24h"
                         ? "Next 24 hours"
                         : pg.periodType === "48h"
@@ -215,13 +215,13 @@ export default function GoalSetupPage() {
                     value={pg.title}
                     onChange={(e) => updateProcessGoal(index, "title", e.target.value)}
                     placeholder="Process goal title..."
-                    className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg mb-2 dark:bg-gray-700 dark:text-white"
+                    className="w-full px-3 py-2 border-2 border-orange-200 rounded-lg mb-2 bg-white text-gray-800 focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
                   />
                   <textarea
                     value={pg.description}
                     onChange={(e) => updateProcessGoal(index, "description", e.target.value)}
                     placeholder="Description (optional)..."
-                    className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg dark:bg-gray-700 dark:text-white"
+                    className="w-full px-3 py-2 border-2 border-orange-200 rounded-lg bg-white text-gray-800 focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
                     rows={2}
                   />
                 </div>
@@ -232,11 +232,11 @@ export default function GoalSetupPage() {
           {/* Habit Goals */}
           <div className="mb-8">
             <div className="flex justify-between items-center mb-4">
-              <h2 className="text-2xl font-semibold text-gray-800 dark:text-white">
+              <h2 className="text-2xl font-semibold text-gray-800">
                 Habit Goals
               </h2>
             </div>
-            <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+            <p className="text-sm text-gray-600 mb-4">
               What habits do you need to develop or let go to reach your goal?
             </p>
 
@@ -249,7 +249,7 @@ export default function GoalSetupPage() {
                   </h3>
                   <button
                     onClick={() => addHabitGoal("develop")}
-                    className="flex items-center gap-2 px-3 py-1 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors text-sm"
+                    className="flex items-center gap-2 px-3 py-1 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors text-sm shadow-md"
                   >
                     <Plus className="w-3 h-3" />
                     Add
@@ -279,7 +279,7 @@ export default function GoalSetupPage() {
                             value={hg.title}
                             onChange={(e) => updateHabitGoal(actualIndex, "title", e.target.value)}
                             placeholder="Habit to develop..."
-                            className="w-full px-3 py-2 border border-green-300 dark:border-green-700 rounded-lg mb-2 dark:bg-gray-700 dark:text-white"
+                            className="w-full px-3 py-2 border-2 border-green-300 rounded-lg mb-2 bg-white text-gray-800 focus:ring-2 focus:ring-green-500 focus:border-green-500"
                           />
                           <textarea
                             value={hg.description}
@@ -287,7 +287,7 @@ export default function GoalSetupPage() {
                               updateHabitGoal(actualIndex, "description", e.target.value)
                             }
                             placeholder="Description (optional)..."
-                            className="w-full px-3 py-2 border border-green-300 dark:border-green-700 rounded-lg dark:bg-gray-700 dark:text-white"
+                            className="w-full px-3 py-2 border-2 border-green-300 rounded-lg bg-white text-gray-800 focus:ring-2 focus:ring-green-500 focus:border-green-500"
                             rows={2}
                           />
                         </div>
@@ -304,7 +304,7 @@ export default function GoalSetupPage() {
                   </h3>
                   <button
                     onClick={() => addHabitGoal("let_go")}
-                    className="flex items-center gap-2 px-3 py-1 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors text-sm"
+                    className="flex items-center gap-2 px-3 py-1 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors text-sm shadow-md"
                   >
                     <Plus className="w-3 h-3" />
                     Add
@@ -334,7 +334,7 @@ export default function GoalSetupPage() {
                             value={hg.title}
                             onChange={(e) => updateHabitGoal(actualIndex, "title", e.target.value)}
                             placeholder="Habit to let go..."
-                            className="w-full px-3 py-2 border border-red-300 dark:border-red-700 rounded-lg mb-2 dark:bg-gray-700 dark:text-white"
+                            className="w-full px-3 py-2 border-2 border-red-300 rounded-lg mb-2 bg-white text-gray-800 focus:ring-2 focus:ring-red-500 focus:border-red-500"
                           />
                           <textarea
                             value={hg.description}
@@ -342,7 +342,7 @@ export default function GoalSetupPage() {
                               updateHabitGoal(actualIndex, "description", e.target.value)
                             }
                             placeholder="Description (optional)..."
-                            className="w-full px-3 py-2 border border-red-300 dark:border-red-700 rounded-lg dark:bg-gray-700 dark:text-white"
+                            className="w-full px-3 py-2 border-2 border-red-300 rounded-lg bg-white text-gray-800 focus:ring-2 focus:ring-red-500 focus:border-red-500"
                             rows={2}
                           />
                         </div>
@@ -357,7 +357,7 @@ export default function GoalSetupPage() {
             <button
               onClick={handleSave}
               disabled={saving}
-              className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg hover:from-purple-600 hover:to-pink-600 disabled:opacity-50 transition-all"
+              className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-orange-600 to-red-600 text-white rounded-lg hover:from-orange-700 hover:to-red-700 disabled:opacity-50 transition-all shadow-md"
             >
               <Save className="w-5 h-5" />
               {saving ? "Saving..." : "Save & Continue"}

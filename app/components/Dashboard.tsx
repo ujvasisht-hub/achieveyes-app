@@ -59,43 +59,45 @@ export default function Dashboard() {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-black">
-        <div className="text-white text-xl font-bebas">Loading...</div>
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-gray-800 text-xl font-bebas">Loading...</div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen">
       {/* Header */}
-      <header className="bg-black border-b-2 border-red-500/50 shadow-lg">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <header className="bg-white/80 backdrop-blur-sm border-b-2 border-orange-300 shadow-lg">
+        <div className="max-w-6xl mx-auto px-8 md:px-16 lg:px-24 xl:px-32 py-6">
           <div className="flex justify-between items-center">
             <div>
-              <h1 className="text-4xl font-bebas tracking-tight">
-                <span className="bg-gradient-to-r from-red-500 via-orange-500 to-red-600 bg-clip-text text-transparent">
+              <h1 className="text-4xl font-bebas tracking-tight flex items-center gap-2">
+                <span className="text-[#ea580c]" style={{ textShadow: '0 0 10px rgba(234, 88, 12, 0.3)' }}>
                   ACHIEVE
                 </span>
-                <span className="text-white">YES</span>
+                <span className="text-white" style={{ textShadow: '0 0 10px rgba(255, 255, 255, 0.3)' }}>
+                  YES
+                </span>
               </h1>
-              <p className="text-gray-300 mt-1">
+              <p className="text-gray-700 mt-2 font-medium">
                 Welcome back, {session?.user?.name || session?.user?.email}!
               </p>
             </div>
             <div className="flex items-center gap-4">
               <button
                 onClick={toggleTheme}
-                className="p-2 rounded-lg bg-gray-900 border-2 border-gray-700 hover:border-red-500 transition-colors"
+                className="p-2 rounded-lg bg-white border-2 border-orange-200 hover:border-orange-400 transition-colors shadow-sm"
               >
                 {theme === "dark" ? (
-                  <Sun className="w-5 h-5 text-yellow-500" />
+                  <Sun className="w-5 h-5 text-orange-600" />
                 ) : (
-                  <Moon className="w-5 h-5 text-gray-300" />
+                  <Moon className="w-5 h-5 text-gray-600" />
                 )}
               </button>
               <button
                 onClick={() => signOut()}
-                className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-red-600 to-orange-600 text-white rounded-lg hover:from-red-700 hover:to-orange-700 transition-all font-bold"
+                className="flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-orange-600 to-red-600 text-white rounded-lg hover:from-orange-700 hover:to-red-700 transition-all font-bold shadow-md"
               >
                 <LogOut className="w-4 h-4" />
                 Sign Out
@@ -106,36 +108,36 @@ export default function Dashboard() {
       </header>
 
       {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <main className="max-w-6xl mx-auto px-8 md:px-16 lg:px-24 xl:px-32 py-12">
         {/* Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-          <div className="bg-gray-900 border-2 border-red-500/50 rounded-lg p-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+          <div className="bg-white border-2 border-orange-300 rounded-xl p-6 shadow-lg">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-gray-300 text-sm font-bold">Active Goals</p>
-                <p className="text-3xl font-bebas text-red-500">
+                <p className="text-gray-600 text-sm font-bold mb-2">Active Goals</p>
+                <p className="text-4xl font-bebas text-[#ea580c]">
                   {goals.filter((g) => !g.isCompleted).length}
                 </p>
               </div>
-              <Target className="w-12 h-12 text-red-500" />
+              <Target className="w-12 h-12 text-orange-500" />
             </div>
           </div>
-          <div className="bg-gray-900 border-2 border-orange-500/50 rounded-lg p-6">
+          <div className="bg-white border-2 border-orange-300 rounded-xl p-6 shadow-lg">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-gray-300 text-sm font-bold">Completed</p>
-                <p className="text-3xl font-bebas text-orange-500">
+                <p className="text-gray-600 text-sm font-bold mb-2">Completed</p>
+                <p className="text-4xl font-bebas text-orange-600">
                   {goals.filter((g) => g.isCompleted).length}
                 </p>
               </div>
-              <Trophy className="w-12 h-12 text-orange-500" />
+              <Trophy className="w-12 h-12 text-orange-600" />
             </div>
           </div>
-          <div className="bg-gray-900 border-2 border-red-500/50 rounded-lg p-6">
+          <div className="bg-white border-2 border-orange-300 rounded-xl p-6 shadow-lg">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-gray-300 text-sm font-bold">Total Progress</p>
-                <p className="text-3xl font-bebas text-red-500">
+                <p className="text-gray-600 text-sm font-bold mb-2">Total Progress</p>
+                <p className="text-4xl font-bebas text-[#ea580c]">
                   {goals.length > 0
                     ? Math.round(
                         (goals.reduce(
@@ -152,17 +154,17 @@ export default function Dashboard() {
                   %
                 </p>
               </div>
-              <TrendingUp className="w-12 h-12 text-red-500" />
+              <TrendingUp className="w-12 h-12 text-orange-500" />
             </div>
           </div>
         </div>
 
         {/* Goals Section */}
-        <div className="flex justify-between items-center mb-6">
-          <h2 className="text-3xl font-bebas text-white">YOUR GOALS</h2>
+        <div className="flex justify-between items-center mb-8">
+          <h2 className="text-3xl font-bebas text-gray-800">YOUR GOALS</h2>
           <Link
             href="/goals/new"
-            className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-red-600 to-orange-600 text-white rounded-lg hover:from-red-700 hover:to-orange-700 transition-all font-bold animate-glow"
+            className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-orange-600 to-red-600 text-white rounded-lg hover:from-orange-700 hover:to-red-700 transition-all font-bold shadow-md"
           >
             <Plus className="w-5 h-5" />
             NEW GOAL
@@ -170,17 +172,17 @@ export default function Dashboard() {
         </div>
 
         {goals.length === 0 ? (
-          <div className="bg-gray-900 border-2 border-red-500/50 rounded-lg p-12 text-center">
-            <Target className="w-16 h-16 text-red-500 mx-auto mb-4" />
-            <h3 className="text-2xl font-bebas text-white mb-2">
+          <div className="bg-white border-2 border-orange-300 rounded-xl p-12 text-center shadow-lg">
+            <Target className="w-16 h-16 text-orange-500 mx-auto mb-4" />
+            <h3 className="text-2xl font-bebas text-gray-800 mb-2">
               NO GOALS YET
             </h3>
-            <p className="text-gray-300 mb-6">
+            <p className="text-gray-600 mb-8">
               Start your journey by creating your first goal!
             </p>
             <Link
               href="/goals/new"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-red-600 to-orange-600 text-white rounded-lg hover:from-red-700 hover:to-orange-700 transition-all font-bold animate-glow"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-orange-600 to-red-600 text-white rounded-lg hover:from-orange-700 hover:to-red-700 transition-all font-bold shadow-md"
             >
               <Plus className="w-5 h-5" />
               CREATE YOUR FIRST GOAL
