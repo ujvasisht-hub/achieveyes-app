@@ -102,7 +102,7 @@ export default function NewGoalPage() {
               value={formData.initialGoal}
               onChange={(e) => updateFormData("initialGoal", e.target.value)}
               placeholder="e.g., I want to lose weight, I want to start a business..."
-              className="w-full h-32 px-4 py-3 border-2 border-orange-200 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 bg-white text-gray-800 resize-none"
+              className="w-full h-32 px-6 py-4 border-2 border-orange-200 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 bg-white text-gray-800 resize-none"
             />
           </div>
         );
@@ -130,7 +130,7 @@ export default function NewGoalPage() {
               value={formData[whyKey]}
               onChange={(e) => updateFormData(whyKey, e.target.value)}
               placeholder="Think deeply about your motivation..."
-              className="w-full h-32 px-4 py-3 border-2 border-orange-200 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 bg-white text-gray-800 resize-none"
+              className="w-full h-32 px-6 py-4 border-2 border-orange-200 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 bg-white text-gray-800 resize-none"
             />
           </div>
         );
@@ -150,7 +150,7 @@ export default function NewGoalPage() {
               value={formData.realGoal}
               onChange={(e) => updateFormData("realGoal", e.target.value)}
               placeholder="Write your refined, real goal here..."
-              className="w-full h-32 px-4 py-3 border-2 border-orange-200 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 bg-white text-gray-800 resize-none"
+              className="w-full h-32 px-6 py-4 border-2 border-orange-200 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 bg-white text-gray-800 resize-none"
             />
           </div>
         );
@@ -172,7 +172,7 @@ export default function NewGoalPage() {
               value={formData.deadline}
               onChange={(e) => updateFormData("deadline", e.target.value)}
               min={new Date().toISOString().split("T")[0]}
-              className="w-full px-4 py-3 border-2 border-orange-200 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 bg-white text-gray-800 text-lg"
+              className="w-full px-6 py-4 border-2 border-orange-200 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 bg-white text-gray-800 text-lg"
             />
           </div>
         );
@@ -203,7 +203,7 @@ export default function NewGoalPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gray-50 flex items-center justify-center p-8 sm:p-12 md:p-16 lg:p-20 xl:p-24">
       <div className="bg-white rounded-lg shadow-sm w-full max-w-2xl p-8 mx-auto">
         {/* Progress Bar */}
         <div className="mb-8">

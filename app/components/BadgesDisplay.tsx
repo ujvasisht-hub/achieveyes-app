@@ -32,11 +32,11 @@ export default function BadgesDisplay({ badges }: BadgesDisplayProps) {
 
   if (badges.length === 0) {
     return (
-      <div className="bg-white rounded-lg shadow-sm p-6 border border-orange-200">
+      <div className="bg-white rounded-lg shadow-sm p-8 border border-orange-200">
         <h2 className="text-2xl font-bold text-gray-800 mb-4">
           Your Badges
         </h2>
-        <p className="text-gray-600 text-center py-8">
+        <p className="text-gray-600 text-center py-8 px-4">
           No badges yet. Complete goals and milestones to earn badges!
         </p>
       </div>
@@ -44,7 +44,7 @@ export default function BadgesDisplay({ badges }: BadgesDisplayProps) {
   }
 
   return (
-    <div className="bg-white rounded-lg shadow-sm p-6 border border-orange-200">
+    <div className="bg-white rounded-lg shadow-sm p-8 border border-orange-200">
       <h2 className="text-2xl font-bold text-gray-800 mb-4">
         Your Badges ({badges.length})
       </h2>
@@ -52,7 +52,7 @@ export default function BadgesDisplay({ badges }: BadgesDisplayProps) {
         {badges.map((badge) => (
           <div
             key={badge.id}
-            className="border-2 border-yellow-300 rounded-lg p-4 bg-yellow-50 hover:shadow-lg transition-all"
+            className="border-2 border-yellow-300 rounded-lg p-6 bg-yellow-50 hover:shadow-lg transition-all"
           >
             <div className="flex items-start gap-3">
               <div className="flex-shrink-0">{getIcon(badge.type)}</div>

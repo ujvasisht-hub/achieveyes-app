@@ -70,7 +70,7 @@ export default function Dashboard() {
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
       <header className="bg-white border-b-2 border-orange-200 shadow-sm">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="max-w-2xl mx-auto px-8 sm:px-12 md:px-16 lg:px-20 xl:px-24 py-6">
           <div className="flex justify-between items-center">
             <div>
               <h1 className="text-4xl font-bebas tracking-tight flex items-center gap-2">
@@ -99,34 +99,34 @@ export default function Dashboard() {
       </header>
 
       {/* Main Content */}
-      <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <main className="max-w-2xl mx-auto px-8 sm:px-12 md:px-16 lg:px-20 xl:px-24 py-8">
         {/* Stats */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-          <div className="bg-white border border-orange-200 rounded-lg p-4 shadow-sm">
+          <div className="bg-white border border-orange-200 rounded-lg p-6 shadow-sm">
             <div className="flex items-center justify-between">
-              <div>
+              <div className="flex-1 pr-4">
                 <p className="text-gray-600 text-sm font-bold mb-2">Active Goals</p>
                 <p className="text-4xl font-bebas text-[#ea580c]">
                   {goals.filter((g) => !g.isCompleted).length}
                 </p>
               </div>
-              <Target className="w-12 h-12 text-orange-500" />
+              <Target className="w-12 h-12 text-orange-500 flex-shrink-0" />
             </div>
           </div>
-          <div className="bg-white border border-orange-200 rounded-lg p-4 shadow-sm">
+          <div className="bg-white border border-orange-200 rounded-lg p-6 shadow-sm">
             <div className="flex items-center justify-between">
-              <div>
+              <div className="flex-1 pr-4">
                 <p className="text-gray-600 text-sm font-bold mb-2">Completed</p>
                 <p className="text-4xl font-bebas text-orange-600">
                   {goals.filter((g) => g.isCompleted).length}
                 </p>
               </div>
-              <Trophy className="w-12 h-12 text-orange-600" />
+              <Trophy className="w-12 h-12 text-orange-600 flex-shrink-0" />
             </div>
           </div>
-          <div className="bg-white border border-orange-200 rounded-lg p-4 shadow-sm">
+          <div className="bg-white border border-orange-200 rounded-lg p-6 shadow-sm">
             <div className="flex items-center justify-between">
-              <div>
+              <div className="flex-1 pr-4">
                 <p className="text-gray-600 text-sm font-bold mb-2">Total Progress</p>
                 <p className="text-4xl font-bebas text-[#ea580c]">
                   {goals.length > 0
@@ -145,7 +145,7 @@ export default function Dashboard() {
                   %
                 </p>
               </div>
-              <TrendingUp className="w-12 h-12 text-orange-500" />
+              <TrendingUp className="w-12 h-12 text-orange-500 flex-shrink-0" />
             </div>
           </div>
         </div>
@@ -163,7 +163,7 @@ export default function Dashboard() {
         </div>
 
         {goals.length === 0 ? (
-          <div className="bg-white border border-orange-200 rounded-lg p-12 text-center shadow-sm">
+          <div className="bg-white border border-orange-200 rounded-lg p-12 text-center shadow-sm mx-4">
             <Target className="w-16 h-16 text-orange-500 mx-auto mb-4" />
             <h3 className="text-2xl font-bebas text-gray-800 mb-2">
               NO GOALS YET
@@ -188,7 +188,7 @@ export default function Dashboard() {
         )}
 
         {/* Badges Section */}
-        <div className="mt-8">
+        <div className="mt-8 mx-4">
           <BadgesDisplay badges={badges} />
         </div>
       </main>
